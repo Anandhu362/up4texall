@@ -1,0 +1,53 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    
+    // Helper function to check if user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    // Helper function to check file size (max 5MB)
+    function isValidSize() {
+      return request.resource.size < 5 * 1024 * 1024;
+    }
+    
+    // Helper function to check if file is an image
+    function isImage() {
+      return request.resource.contentType.matches('image/.*');
+    }
+    
+    // Product images - only sellers can upload
+    match /products/{productId}/{allPaths=**} {
+      // Anyone can read product images
+      allow read: if true;
+      
+      // Only authenticated sellers can upload product images
+      allow write: if isAuthenticated() && 
+                     isImage() && 
+                     isValidSize() &&
+                     firestore.get(/databases/(default)/documents/users/$(request.auth.uid)).data.role == 'seller';
+      
+      // Only the seller can delete their product images
+      allow delete: if isAuthenticated() &&
+                      firestore.get(/databases/(default)/documents/users/$(request.auth.uid)).data.role == 'seller';
+    }
+    
+    // User profile images
+    match /users/{userId}/profile/{allPaths=**} {
+      // Anyone can read profile images
+      allow read: if true;
+      
+      // Users can only upload their own profile images
+      allow write: if isAuthenticated() && 
+                     request.auth.uid == userId &&
+                     isImage() && 
+                     isValidSize();
+      
+      // Users can only delete their own profile images
+      allow delete: if isAuthenticated() && 
+                      request.auth.uid == userId;
+    }
+  }
+}
