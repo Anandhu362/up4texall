@@ -1,12 +1,16 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  /* Remove unoptimized: true to allow Vercel to handle images correctly */
   images: {
-    unoptimized: true, // Required for static export
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'firebasestorage.googleapis.com', // Allows Firebase images
+      },
+    ],
   },
-  // Enable static export for Vercel
-  output: 'standalone',
+  /* Remove output: 'standalone' as Vercel handles this automatically */
 };
 
 export default nextConfig;
