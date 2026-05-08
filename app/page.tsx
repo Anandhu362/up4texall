@@ -49,18 +49,24 @@ export default function Home() {
       </header>
 
       {/* Main Content Area */}
-      <main className="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-20 space-y-24">
+      <main className="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-20 space-y-20">
         
         {/* Hero Section */}
-        <section className="flex flex-col md:flex-row gap-12 items-center justify-between">
-          <div className="md:w-1/2 space-y-6">
+        <section className="flex flex-col gap-12 justify-between">
+          <div className="max-w-2xl space-y-6">
             <h2 className="text-5xl md:text-6xl font-medium tracking-tight text-slate-900 leading-[1.1]">
               Waste to Wealth pathway
             </h2>
-            <p className="text-lg md:text-xl text-slate-500 leading-relaxed max-w-lg">
-              Connecting the supply of upcyclable textiles with conscious fashion firms. Upcycle for a cleaner tomorrow.
+            <p className="text-lg md:text-xl text-slate-500 leading-relaxed">
+              Connecting the supply of upcyclable textiles with conscious fashion firms.
             </p>
-            <div className="pt-4 flex flex-col sm:flex-row gap-4">
+            
+            {/* Bold, Italic, Quoted Text */}
+            <p className="text-xl md:text-2xl font-bold italic text-slate-800 py-2">
+              &quot;Upcycle for a cleaner tomorrow&quot;
+            </p>
+
+            <div className="pt-2 flex flex-col sm:flex-row gap-4">
               <Link
                 href="/login?role=buyer"
                 className="px-8 py-3.5 text-base font-medium rounded-full bg-[#2B2640] text-white text-center transition-all duration-300 hover:bg-[#1E1A2F] hover:shadow-lg hover:-translate-y-0.5"
@@ -77,45 +83,88 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 3-Card Ecosystem Section (Modeled after the reference image cards) */}
-        <section className="grid md:grid-cols-3 gap-6">
-          {/* Light Card */}
-          <div className="p-10 rounded-[2rem] bg-[#EAE6F5] flex flex-col justify-between min-h-[320px] transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-            <div>
-              <div className="text-4xl mb-4">🌍</div>
-              <h3 className="text-2xl font-medium text-slate-900 mb-2">Eco-Friendly Supply</h3>
-            </div>
-            <p className="text-slate-700 leading-relaxed">
-              Give materials a second life. Reduce environmental impact, one purchase at a time.
-            </p>
+        {/* Why Upcycling Section */}
+        <section className="p-10 md:p-14 rounded-[2rem] bg-white shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-slate-100">
+          <h3 className="text-2xl font-bold tracking-tight text-slate-900 mb-6 uppercase">
+            Why Upcycling
+          </h3>
+          <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-4xl">
+            India generates nearly 7.8 million tons of textile waste annually, much of it ending up in landfills. We turn the discarded textiles into upcycled apparel raw materials by enabling traceability, collaboration and market access for every stakeholder in the upcycled apparel ecosystem.
+          </p>
+        </section>
+
+        {/* ESG & SDGs Contribution Section */}
+        <section className="space-y-8">
+          {/* Highlighted CTA Banner */}
+          <div className="bg-[#2B2640] text-white p-8 md:p-10 rounded-[2rem] shadow-lg text-center flex items-center justify-center">
+            <h3 className="text-2xl md:text-3xl font-bold tracking-widest uppercase">
+              Join our hands to contribute to ESG & SDGs
+            </h3>
           </div>
 
-          {/* Dark Card 1 */}
-          <div className="p-10 rounded-[2rem] bg-[#2B2640] flex flex-col justify-between min-h-[320px] transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-            <div>
-              <div className="text-4xl mb-4 opacity-90">✨</div>
-              <h3 className="text-2xl font-medium text-white mb-2">Curated Materials</h3>
+          {/* Action Bullet Points */}
+          <div className="flex flex-col gap-4">
+            
+            {/* Item 1: Registration Form */}
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between p-6 md:p-8 bg-white rounded-2xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-slate-100 gap-6 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)]">
+              <div className="flex items-center gap-4">
+                <span className="min-w-[8px] h-2 rounded-full bg-[#2B2640]"></span>
+                <span className="text-lg text-slate-800 font-medium leading-tight">
+                  Be a part of the Upcycled apparel ecosystem
+                </span>
+              </div>
+              <a 
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdmmMjbnL-aKTHf_-tXVC683QHR-_Ac-mWv4YDF3hEniecy7w/viewform?usp=publish-editor" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm font-semibold bg-[#F9F9FB] hover:bg-slate-200 px-6 py-3 rounded-full text-[#2B2640] transition-colors whitespace-nowrap self-start md:self-auto"
+              >
+                Registration Form <span>→</span>
+              </a>
             </div>
-            <p className="text-[#B4AECC] leading-relaxed">
-              Discover rare textiles. Find unique fabrics that tell a story of transformation.
-            </p>
-          </div>
 
-          {/* Dark Card 2 */}
-          <div className="p-10 rounded-[2rem] bg-[#2B2640] flex flex-col justify-between min-h-[320px] transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-            <div>
-              <div className="text-4xl mb-4 opacity-90">🤝</div>
-              <h3 className="text-2xl font-medium text-white mb-2">Traceable Economy</h3>
+            {/* Item 2: Learn More (MoT) */}
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between p-6 md:p-8 bg-white rounded-2xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-slate-100 gap-6 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)]">
+              <div className="flex items-center gap-4">
+                <span className="min-w-[8px] h-2 rounded-full bg-[#2B2640]"></span>
+                <span className="text-lg text-slate-800 font-medium leading-tight">
+                  Here you can get MoT &quot;Upcycled Textile Manufacturer&quot; Certificate
+                </span>
+              </div>
+              <Link 
+                href="https://www.upmade.org/certification" 
+                className="flex items-center gap-2 text-sm font-semibold bg-[#F9F9FB] hover:bg-slate-200 px-6 py-3 rounded-full text-[#2B2640] transition-colors whitespace-nowrap self-start md:self-auto"
+              >
+                Learn More <span>→</span>
+              </Link>
             </div>
-            <p className="text-[#B4AECC] leading-relaxed">
-              Join verified creators. Support sustainable business practices and conscious consumption.
-            </p>
+
+            {/* Item 3: PDF Download (SWM Rules) */}
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between p-6 md:p-8 bg-white rounded-2xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-slate-100 gap-6 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)]">
+              <div className="flex items-center gap-4">
+                <span className="min-w-[8px] h-2 rounded-full bg-[#2B2640]"></span>
+                <span className="text-lg text-slate-800 font-medium leading-tight">
+                  New Solid Waste Management (SWM) Rules 2026
+                </span>
+              </div>
+              <a 
+                href="/SWM_2026.pdf" 
+                download="SWM_2026.pdf" 
+                className="flex items-center gap-2 text-sm font-semibold bg-[#F9F9FB] hover:bg-slate-200 px-6 py-3 rounded-full text-[#2B2640] transition-colors whitespace-nowrap self-start md:self-auto"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                PDF Download
+              </a>
+            </div>
+
           </div>
         </section>
 
-        {/* Action/Use Cases Section (Modeled after the "Business" section) */}
+        {/* Action/Use Cases Section */}
         <section className="grid md:grid-cols-2 gap-8">
-          {/* White Card with Soft Shadow */}
+          {/* Buyer Card */}
           <div className="p-10 md:p-14 rounded-[2rem] bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
             <h2 className="text-3xl font-medium tracking-tight text-slate-900 mb-4">For Buyers</h2>
             <p className="text-slate-500 mb-8 leading-relaxed">
@@ -137,6 +186,7 @@ export default function Home() {
             </Link>
           </div>
 
+          {/* Seller Card */}
           <div className="p-10 md:p-14 rounded-[2rem] bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
             <h2 className="text-3xl font-medium tracking-tight text-slate-900 mb-4">For Sellers</h2>
             <p className="text-slate-500 mb-8 leading-relaxed">
