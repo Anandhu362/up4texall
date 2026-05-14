@@ -132,7 +132,7 @@ export default function Home() {
                 </span>
               </div>
               <Link 
-                href="https://www.upmade.org/certification" 
+                href="https://upcycle.trace-textiles.gov.in/login#signup" 
                 className="flex items-center gap-2 text-sm font-semibold bg-[#F9F9FB] hover:bg-slate-200 px-6 py-3 rounded-full text-[#2B2640] transition-colors whitespace-nowrap self-start md:self-auto"
               >
                 Learn More <span>→</span>
