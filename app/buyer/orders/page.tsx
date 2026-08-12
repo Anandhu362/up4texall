@@ -122,7 +122,7 @@ export default function BuyerOrdersPage() {
                                 </div>
                                 <div className="text-left md:text-right flex flex-col md:items-end gap-2">
                                     <p className="text-3xl font-bold text-slate-900">
-                                        ${order.total.toFixed(2)}
+                                        ₹{order.total.toFixed(2)}
                                     </p>
                                     {getStatusBadge(order.status)}
                                 </div>
@@ -157,7 +157,7 @@ export default function BuyerOrdersPage() {
                                                 <p className="text-sm text-slate-500 mt-0.5">
                                                     Qty: <span className="font-medium text-slate-700">{item.quantity}</span>
                                                     <span className="mx-2 text-slate-300">•</span>
-                                                    ${item.price.toFixed(2)} each
+                                                    ₹{item.price.toFixed(2)} each
                                                 </p>
                                             </div>
                                         </div>
@@ -165,7 +165,7 @@ export default function BuyerOrdersPage() {
                                         {/* Item Total Line */}
                                         <div className="text-left sm:text-right pl-20 sm:pl-0">
                                             <p className="font-bold text-slate-900">
-                                                ${(item.price * item.quantity).toFixed(2)}
+                                                ₹{(item.price * item.quantity).toFixed(2)}
                                             </p>
                                         </div>
                                     </div>

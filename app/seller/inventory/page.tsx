@@ -213,7 +213,7 @@ export default function InventoryPage() {
                                     </div>
                                     <div className="flex justify-between items-center pt-2 border-t border-slate-200/60 mt-1">
                                         <span className="text-slate-500 font-medium">Price</span>
-                                        <span className="font-bold text-lg text-slate-900">${product.price.toFixed(2)}</span>
+                                        <span className="font-bold text-lg text-slate-900">₹{product.price.toFixed(2)}</span>
                                     </div>
                                 </div>
 
@@ -485,7 +485,7 @@ function ProductForm({
                                 <input type="number" name="quantity" required min="0" value={formData.quantity} onChange={handleChange} className="w-full px-5 py-3.5 bg-[#F9F9FB] border border-slate-200 rounded-2xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#2B2640]/20 focus:border-[#2B2640] transition-all" placeholder="10" />
                             </div>
                             <div>
-                                <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Price ($) *</label>
+                                <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Price (₹) *</label>
                                 <input type="number" name="price" required min="0" step="0.01" value={formData.price} onChange={handleChange} className="w-full px-5 py-3.5 bg-[#F9F9FB] border border-slate-200 rounded-2xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#2B2640]/20 focus:border-[#2B2640] transition-all" placeholder="29.99" />
                             </div>
                         </div>

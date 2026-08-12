@@ -149,7 +149,7 @@ export default function WishlistPage() {
                                         <div>
                                             <p className="text-xs font-medium text-slate-400 mb-0.5">Price</p>
                                             <p className="text-xl font-bold text-slate-900">
-                                                ${product.price.toFixed(2)}
+                                                ₹{product.price.toFixed(2)}
                                             </p>
                                         </div>
                                     </div>

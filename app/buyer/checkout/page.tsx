@@ -94,7 +94,7 @@ export default function CheckoutPage() {
                 await createNotification({
                     userId: sellerId,
                     type: 'new_order',
-                    message: `New order from ${user.name} - $${total.toFixed(2)}`,
+                    message: `New order from ${user.name} - ₹${total.toFixed(2)}`,
                     read: false,
                     relatedId: orderId,
                 });
@@ -182,12 +182,12 @@ export default function CheckoutPage() {
                                     <p className="text-sm text-slate-500 mt-1">
                                         Qty: <span className="font-medium text-slate-700">{item.quantity}</span> 
                                         <span className="mx-2 text-slate-300">•</span> 
-                                        ${item.product.price.toFixed(2)} each
+                                        ₹{item.product.price.toFixed(2)} each
                                     </p>
                                 </div>
                             </div>
                             <p className="font-bold text-slate-900 text-lg">
-                                ${(item.product.price * item.quantity).toFixed(2)}
+                                ₹{(item.product.price * item.quantity).toFixed(2)}
                             </p>
                         </div>
                     ))}
@@ -198,7 +198,7 @@ export default function CheckoutPage() {
             <div className="bg-[#F9F9FB] p-6 md:p-8 rounded-[2rem] border border-slate-200 shadow-[0_4px_20px_rgb(0,0,0,0.03)]">
                 <div className="flex justify-between items-end mb-8">
                     <span className="text-sm font-semibold text-slate-500 uppercase tracking-wider">Total Amount</span>
-                    <span className="text-4xl font-bold text-slate-900">${total.toFixed(2)}</span>
+                    <span className="text-4xl font-bold text-slate-900">₹{total.toFixed(2)}</span>
                 </div>
                 
                 <button

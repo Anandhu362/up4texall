@@ -178,7 +178,7 @@ export default function SellerOrdersPage() {
                                 <div className="md:text-right">
                                     <p className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-1">Total</p>
                                     <p className="text-3xl font-bold text-slate-900">
-                                        ${order.total.toFixed(2)}
+                                        ₹{order.total.toFixed(2)}
                                     </p>
                                     <p className="text-sm text-slate-500 mt-1">{order.items.length} item(s)</p>
                                 </div>
@@ -233,7 +233,7 @@ export default function SellerOrdersPage() {
                                                 </div>
                                                 <div className="text-right pl-4">
                                                     <p className="font-bold text-slate-900">
-                                                        ${(item.price * item.quantity).toFixed(2)}
+                                                        ₹{(item.price * item.quantity).toFixed(2)}
                                                     </p>
                                                 </div>
                                             </div>

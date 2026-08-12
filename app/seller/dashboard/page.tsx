@@ -127,7 +127,7 @@ export default function SellerDashboard() {
                         </span>
                     </div>
                     <div>
-                        <p className="text-4xl font-bold tracking-tight text-slate-900 mb-1">${totalRevenue.toFixed(2)}</p>
+                        <p className="text-4xl font-bold tracking-tight text-slate-900 mb-1">₹{totalRevenue.toFixed(2)}</p>
                         <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Total Revenue</p>
                     </div>
                 </div>
@@ -163,7 +163,7 @@ export default function SellerDashboard() {
                                             Order from {order.buyerName}
                                         </p>
                                         <p className="text-sm font-medium text-slate-500">
-                                            {order.items.length} item(s) • <span className="text-slate-700">${order.total.toFixed(2)}</span>
+                                            {order.items.length} item(s) • <span className="text-slate-700">₹{order.total.toFixed(2)}</span>
                                         </p>
                                     </div>
                                     <div className="sm:text-right">
